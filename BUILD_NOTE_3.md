@@ -1,0 +1,1 @@
+Trigger build after splitting SDK setup from Android platform installation.
