@@ -1,0 +1,1 @@
+CineVozz Android APK builds are automated with GitHub Actions. See the Actions tab for the latest debug APK artifact.
