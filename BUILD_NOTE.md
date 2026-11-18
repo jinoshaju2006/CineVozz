@@ -1,0 +1,1 @@
+CI now installs Android platform tools and API 35 explicitly.
