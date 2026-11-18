@@ -17,7 +17,7 @@ class ArchiveRepository {
     suspend fun search(query: String): List<ArchiveMovie> = withContext(Dispatchers.IO) {
         val clean = query.replace('"'.toString(), "").trim()
         val q = if (clean.isBlank()) "mediatype:movies" else
-            "mediatype:movies AND title:\\"$clean\\""
+            "mediatype:movies AND title:\"$clean\""
         val encoded = URLEncoder.encode(q, StandardCharsets.UTF_8.toString())
         val url = "https://archive.org/advancedsearch.php?q=$encoded&fl[]=identifier&fl[]=title&fl[]=year&fl[]=description&fl[]=licenseurl&fl[]=rights&output=json&rows=60&sort[]=downloads+desc"
         val request = Request.Builder().url(url)
