@@ -1,0 +1,1 @@
+Android SDK package names are now passed as separate lines to setup-android.
