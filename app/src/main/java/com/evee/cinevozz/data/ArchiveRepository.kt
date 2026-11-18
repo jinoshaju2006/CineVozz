@@ -15,7 +15,7 @@ class ArchiveRepository {
         .build()
 
     suspend fun search(query: String): List<ArchiveMovie> = withContext(Dispatchers.IO) {
-        val clean = query.replace("\\\"", "").trim()
+        val clean = query.replace('"'.toString(), "").trim()
         val q = if (clean.isBlank()) "mediatype:movies" else
             "mediatype:movies AND title:\\"$clean\\""
         val encoded = URLEncoder.encode(q, StandardCharsets.UTF_8.toString())
